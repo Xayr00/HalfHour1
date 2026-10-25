@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f7f4">
+  <meta name="description" content="A calm, private daily planner built around 48 half-hour slots.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="HalfHour">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="./styles.css">
+  <title>HalfHour — make room for your day</title>
+</head>
+<body>
+  <div class="app-frame" id="app-frame">
+    <header class="app-header">
+      <a class="brand" href="#day" aria-label="HalfHour home" data-nav="day">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i></span>
+        <span class="brand-copy"><strong>HalfHour</strong><small>Make room for your day</small></span>
+      </a>
+      <div class="header-actions">
+        <span class="storage-indicator" id="storage-indicator"><span class="status-dot"></span><span>On this device</span></span>
+        <button class="icon-button" type="button" data-nav="settings" aria-label="Open settings" title="Settings">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.4a3.6 3.6 0 1 0 0 7.2 3.6 3.6 0 0 0 0-7.2Z"/><path d="m19.4 15 .1.1 1.1.9-1.5 2.6-1.4-.6a2 2 0 0 0-2 .2l-.1.1-.2 1.5h-3l-.2-1.5a2 2 0 0 0-1.5-1.5l-.2-.1-1.4.6-1.5-2.6 1.1-.9a2 2 0 0 0 .5-1.9l-.1-.2-1-1 .9-2.8 1.5.2a2 2 0 0 0 1.6-.8l.1-.2V5.7h3l.2 1.5a2 2 0 0 0 1.5 1.4l.2.1 1.4-.6 1.5 2.6-1.1.9a2 2 0 0 0-.5 1.9l.1.2Z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <nav class="primary-nav" aria-label="Main navigation">
+      <button type="button" class="nav-item is-active" data-nav="day" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M7.5 3.5v3M16.5 3.5v3M3.5 9.5h17M8 13h2m4 0h2m-8 3h2"/></svg><span>Day</span></button>
+      <button type="button" class="nav-item" data-nav="actions"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v17M3.5 12h17"/><rect x="4" y="4" width="16" height="16" rx="4"/></svg><span>Actions</span></button>
+      <button type="button" class="nav-item" data-nav="templates"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4" width="7" height="7" rx="1.7"/><rect x="13.5" y="4" width="7" height="7" rx="1.7"/><rect x="3.5" y="14" width="7" height="6" rx="1.7"/><rect x="13.5" y="14" width="7" height="6" rx="1.7"/></svg><span>Templates</span></button>
+    </nav>
+
+    <main id="main-content" tabindex="-1" aria-live="off">
+      <section class="loading-state" aria-label="Loading HalfHour">
+        <span class="loading-mark"><i></i><i></i></span>
+        <p>Opening your day…</p>
+      </section>
+    </main>
+    <footer class="app-footer"><span>HalfHour</span><span>One day at a time.</span></footer>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="toast-root" class="toast-root" aria-live="polite" aria-atomic="true"></div>
+  <script src="./app.js" defer></script>
+</body>
+</html>
